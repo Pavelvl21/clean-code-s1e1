@@ -13,11 +13,11 @@
   text-align: right;
 }
 
-.header-image {
+.header__image {
   width: 100%;
 }
 
-.header .header-link {
+.header__link {
   font-family: fantasy, cursive;
 }
 
@@ -35,13 +35,15 @@
   margin: 0 auto 0;
 }
 
-.task-input {
+.section__input,
+.list__input,
+.list__label {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
 }
 
-.task-wrapper {
+.section__wrapper {
   display: flex;
 }
 
@@ -55,11 +57,15 @@
 }
 
 .input,
-.button{
+.section__button,
+.list__button,
+.item__button {
   outline: none;
 }
 
-.button {
+.section__button,
+.list__button,
+.item__button {
   background: none;
   border: 0px;
   color: #888;
@@ -75,8 +81,7 @@
 
 /* Heading */
 
-.title,
-.label-input[for="new-task"] {
+.section__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -86,7 +91,8 @@
   text-transform: uppercase;
 }
 
-.input[type="text"] {
+.list__input,
+.section__input {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -96,83 +102,74 @@
   background: #fff;
   border-radius: 6px;
   font-family: Lato, sans-serif;
-  color: #888;
 }
 
-.input[type="text"]:focus {
+.list__input:focus {
   color: #333;
 }
 
 /* New Task */
 
-.label-input[for="new-task"] {
-  display: block;
-  margin: 0 0 20px;
+.section__wrapper {
+  margin-top: 20px;
 }
 
-.input#new-task {
+.input_add {
   width: 318px;
 }
 
 /* Task list */
 
-.list-item {
+.list__input {
+  display: none;
+  width: 226px;
+  color: #888;
+}
+
+.list__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.list-item > * {
-  vertical-align: middle;
-}
-
-.list-item > .input[type="checkbox"] {
+.item__input{
   margin: 0 10px;
 }
 
-.list-item > .label-input {
+.list__label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-.list-item >  .input[type="text"] {
-  width: 226px;
-}
-
-.button-image {
+.button__image {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.button-image:hover {
+.button__image:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
 
-.list#completed-tasks .label-input {
+.list__label_done {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
 
-.list .list-item .input[type=text] {
-  display: none;
-}
-
-.list .list-item.edit-mode .input[type=text] {
+.list__input_edit {
   display: inline-block;
   width: 224px;
 }
 
-.list .list-item.edit-mode .label-input {
+.list__label_hidden {
   display: none;
 }
